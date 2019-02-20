@@ -43,7 +43,7 @@ public class A0001_LoginTestPositive extends BaseTest{
     private void checkLogout() {
         homePage.clickUserMenuButton();
 
-        assertTrue(loginPage.isLoginPageURLCorrect(PropertiesReader.getInstance().getBaseUrl()), "Warning! CMS URL " +
+        assertTrue(loginPage.isLoginPageURLCorrect(), "Warning! CMS URL " +
                 "is incorrect when logging out!");
         assertFalse(loginPage.isLoginButtonEnabled(), "Warning! Login button is enabled on LOGIN page when logging out!");
     }
@@ -62,7 +62,7 @@ public class A0001_LoginTestPositive extends BaseTest{
 
         homePage.waitForVisibility(homePage.getAvatarButton());
         assertTrue(homePage.isElementDisplayed(homePage.getAvatarButton()), "Warning! No avatar button is presented");
-        assertTrue(homePage.isHomePageURLIncorrect(PropertiesReader.getInstance().getBaseUrl()), "Failed! Home page URL " +
+        assertTrue(homePage.isHomePageURLIncorrect(), "Failed! Home page URL " +
                 "is incorrect");
     }
 
@@ -80,7 +80,7 @@ public class A0001_LoginTestPositive extends BaseTest{
     }
 
     private void checkOpenLoginPage() {
-        assertTrue(loginPage.isLoginPageURLCorrect(PropertiesReader.getInstance().getBaseUrl()), "Warning! CMS URL " +
+        assertTrue(loginPage.isLoginPageURLCorrect(), "Warning! CMS URL " +
                 "is incorrect when opening!");
         assertFalse(loginPage.isLoginButtonEnabled(), "Warning! Login button is enabled on LOGIN page when opening the page!");
     }

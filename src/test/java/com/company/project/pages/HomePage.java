@@ -2,6 +2,7 @@ package com.company.project.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage extends BasePage{
     private final By avatarButton = By.cssSelector("button[class^=style__WrapAvatar]");
@@ -13,7 +14,7 @@ public class HomePage extends BasePage{
     }
 
     public void clickUserMenuButton() {
-        clickElement(driver.findElements(userMenuButtons).get(1));
+        clickElement(getUserMenuButton());
     }
 
     public void clickAvatar () {
@@ -21,21 +22,21 @@ public class HomePage extends BasePage{
     }
 
     public void openProfilePage() {
-        clickElement(getAvatarButton());
-        clickElement(findElements(userMenuButtons).get(0));
+        clickElement(avatarButton);
+        clickElement(getProfilePageButton());
     }
 
     public void openOrderManagementPage() {
         waitForVisibility(orderManagementButtons);
-        clickElement(findElements(orderManagementButtons).get(0));
+        clickElement(getOrderManagementPageButton());
     }
 
     public boolean isUserMenuButtonDisplayed() {
-        return isElementDisplayed(findElements(userMenuButtons).get(1));
+        return isElementDisplayed(getUserMenuButton());
     }
 
-    public boolean isHomePageURLIncorrect (String baseURL) {
-        return isURLCorrect(baseURL, "home");
+    public boolean isHomePageURLIncorrect () {
+        return isURLCorrect("home");
     }
 
     public boolean isAvatarButtonEnabled() {
@@ -45,5 +46,17 @@ public class HomePage extends BasePage{
 
     public By getAvatarButton() {
         return avatarButton;
+    }
+
+    private WebElement getProfilePageButton() {
+        return findElements(userMenuButtons).get(0);
+    }
+
+    private WebElement getUserMenuButton() {
+        return findElements(userMenuButtons).get(1);
+    }
+
+    private WebElement getOrderManagementPageButton() {
+        return findElements(orderManagementButtons).get(0);
     }
 }

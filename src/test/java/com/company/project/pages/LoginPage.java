@@ -23,8 +23,8 @@ public class LoginPage extends BasePage{
         findElement(passwordInput).sendKeys(password);
     }
 
-    public boolean isLoginPageURLCorrect(String baseURL) {
-        return isURLCorrect(baseURL, "");
+    public boolean isLoginPageURLCorrect() {
+        return isURLCorrect("");
     }
 
     public void clearLogin() {

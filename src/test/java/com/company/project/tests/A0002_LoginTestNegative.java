@@ -104,7 +104,7 @@ public class A0002_LoginTestNegative extends BaseTest {
     }
 
     private void checkLoginPageURL() {
-        assertTrue(loginPage.isLoginPageURLCorrect(PropertiesReader.getInstance().getBaseUrl()), "Warning! CMS URL " +
+        assertTrue(loginPage.isLoginPageURLCorrect(), "Warning! CMS URL " +
                 "is incorrect when opening");
     }
 

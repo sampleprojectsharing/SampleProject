@@ -14,7 +14,7 @@ public class OrderManagementPage extends BasePage{
         clickElement(badgesButton);
     }
 
-    public boolean isOrderManagementPageURLCorrect(String baseURL) {
-        return isURLCorrect(baseURL, "orderManagement");
+    public boolean isOrderManagementPageURLCorrect() {
+        return isURLCorrect("orderManagement");
     }
 }

@@ -1,5 +1,6 @@
 package com.company.project.pages;
 
+import com.company.project.dataProviders.PropertiesReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class BasePage {
 
-    WebDriver driver;
+    private WebDriver driver;
     private WebDriverWait wait;
 
     BasePage(WebDriver driver) {
@@ -25,7 +26,8 @@ public class BasePage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
     }
 
-    boolean isURLCorrect(String baseURL, String partialURL) {
+    boolean isURLCorrect(String partialURL) {
+        String baseURL = PropertiesReader.getInstance().getBaseUrl();
         wait.until(ExpectedConditions.urlContains(partialURL));
         return driver.getCurrentUrl().equals(baseURL + partialURL);
     }

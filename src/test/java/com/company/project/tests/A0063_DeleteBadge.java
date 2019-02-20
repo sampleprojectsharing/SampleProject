@@ -2,7 +2,6 @@ package com.company.project.tests;
 
 import com.company.project.actions.LoginActions;
 import com.company.project.apiHelpers.BadgesApi;
-import com.company.project.dataProviders.PropertiesReader;
 import com.company.project.models.Badge;
 import com.company.project.pages.BadgesPage;
 import com.company.project.pages.HomePage;
@@ -59,13 +58,13 @@ public class A0063_DeleteBadge extends BaseTest{
 
     private void checkOpenBadgesPage(OrderManagementPage orderManagementPage, BadgesPage badgesPage) {
         orderManagementPage.openBadgesPage();
-        assertTrue(badgesPage.isBadgesPageURLCorrect(PropertiesReader.getInstance().getBaseUrl()), "Warning! Badges " +
+        assertTrue(badgesPage.isBadgesPageURLCorrect(), "Warning! Badges " +
                 "page URL is incorrect!");
     }
 
     private void checkOpenOrderManagementPage(HomePage homePage, OrderManagementPage orderManagementPage) {
         homePage.openOrderManagementPage();
-        assertTrue(orderManagementPage.isOrderManagementPageURLCorrect(PropertiesReader.getInstance().getBaseUrl()),
+        assertTrue(orderManagementPage.isOrderManagementPageURLCorrect(),
                 "Warning! Order Management page URL " +
                 "is incorrect!");
     }

@@ -41,8 +41,8 @@ public class BadgesPage extends BasePage {
         return getElementIndexByText(badgeNamesLocator, testBadgeTitle) != -1;
     }
 
-    public boolean isBadgesPageURLCorrect(String baseURL) {
-        return isURLCorrect(baseURL, "badges");
+    public boolean isBadgesPageURLCorrect() {
+        return isURLCorrect("badges");
     }
 
     public void waitForSpinnerInvisibility() {

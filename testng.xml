@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CMS tests">
+
+    <test name="Login tests">
+        <classes>
+            <class name="com.company.project.tests.A0001_LoginTestPositive"/>
+        </classes>
+    </test>
+    <test name="Login tests negative">
+        <classes>
+            <class name="com.company.project.tests.A0002_LoginTestNegative"/>
+        </classes>
+    </test>
+    <test name="Verify profile">
+        <classes>
+            <class name="com.company.project.tests.A0003_VerifyProfile"/>
+        </classes>
+    </test>
+    <test name="Delete badge">
+        <classes>
+            <class name="com.company.project.tests.A0063_DeleteBadge"/>
+        </classes>
+    </test>
+</suite>
